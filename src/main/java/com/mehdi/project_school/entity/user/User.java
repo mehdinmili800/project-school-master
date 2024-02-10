@@ -1,6 +1,8 @@
 package com.mehdi.project_school.entity.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.mehdi.project_school.entity.group.Student;
+import com.mehdi.project_school.entity.group.Teacher;
 import com.mehdi.project_school.token.TokenEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -69,10 +71,13 @@ public class User implements UserDetails {
             inverseJoinColumns = @JoinColumn(name = "authority_id", referencedColumnName = "id"))
     private List<Authority> authorities;
 
-    @OneToMany(mappedBy = "user")
-    private List<TokenEntity> tokens;
+    @JsonIgnore
+    @OneToMany(mappedBy = "teacher")
+    private List<Teacher> teachers = new ArrayList<>();
 
-
+    @JsonIgnore
+    @OneToMany(mappedBy = "student")
+    private List<Student> students = new ArrayList<>();
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -141,5 +146,20 @@ public class User implements UserDetails {
         this.authorities = authorities;
     }
 
+    public List<Teacher> getTeachers() {
+        return teachers;
+    }
 
+    public void setTeachers(List<Teacher> teachers) {
+        this.teachers = teachers;
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
+    }
 }
+

@@ -1,4 +1,4 @@
-package com.mehdi.project_school.service.auth.impl;
+package com.mehdi.project_school.service.impl;
 
 import com.mehdi.project_school.dto.response.TeacherResponseDTO;
 import com.mehdi.project_school.entity.TeacherPreference;
@@ -9,7 +9,7 @@ import com.mehdi.project_school.repository.TeacherPreferenceRepository;
 import com.mehdi.project_school.repository.user.TeacherRepository;
 import com.mehdi.project_school.repository.user.UserRepository;
 import com.mehdi.project_school.service.auth.AuthorityService;
-import com.mehdi.project_school.service.auth.TeacherService;
+import com.mehdi.project_school.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

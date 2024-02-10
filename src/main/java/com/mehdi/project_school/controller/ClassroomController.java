@@ -1,8 +1,8 @@
 package com.mehdi.project_school.controller;
 
-import com.mehdi.project_school.dto.response.TeacherResponseDTO;
-import com.mehdi.project_school.entity.group.Teacher;
-import com.mehdi.project_school.service.impl.TeacherServiceImpl;
+import com.mehdi.project_school.dto.response.ClassroomResponseDTO;
+import com.mehdi.project_school.entity.Classroom;
+import com.mehdi.project_school.service.impl.ClassroomServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/api")
-public class TeacherController {
+public class ClassroomController {
 
     @Autowired
-    private TeacherServiceImpl teacherService;
+    private ClassroomServiceImpl classroomService;
 
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @PostMapping(value = "/teachers/create")
-    public Teacher create(@RequestBody TeacherResponseDTO teacherResponseDTO){
-        return teacherService.create(teacherResponseDTO);
+    @PostMapping(value = "/classrooms/create")
+    public Classroom create(@RequestBody ClassroomResponseDTO classroomResponseDTO){
+        return classroomService.create(classroomResponseDTO);
     }
 }

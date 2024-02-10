@@ -1,4 +1,4 @@
-package com.mehdi.project_school.service.auth;
+package com.mehdi.project_school.service;
 
 import com.mehdi.project_school.dto.response.TeacherResponseDTO;
 import com.mehdi.project_school.entity.group.Teacher;

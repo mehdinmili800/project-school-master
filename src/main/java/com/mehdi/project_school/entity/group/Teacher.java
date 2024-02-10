@@ -1,12 +1,14 @@
 package com.mehdi.project_school.entity.group;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.mehdi.project_school.entity.Course;
 import com.mehdi.project_school.entity.user.User;
-
-
 import jakarta.persistence.*;
 
+
 import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * Teacher model class to contains teacher data and build a relationship model.
@@ -65,9 +67,9 @@ public class Teacher {
     /**
      * Courses that the teacher teaching.
      */
-//    @JsonIgnore
-//    @OneToMany(mappedBy = "teacher")
-//    private List<Course> courses = new ArrayList<>();
+    @JsonIgnore
+    @OneToMany(mappedBy = "teacher")
+    private List<Course> courses = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -101,11 +103,11 @@ public class Teacher {
         this.phone = phone;
     }
 
-//    public List<Course> getCourses() {
-//        return courses;
-//    }
-//
-//    public void setCourses(List<Course> courses) {
-//        this.courses = courses;
-//    }
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
 }
