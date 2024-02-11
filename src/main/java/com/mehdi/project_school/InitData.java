@@ -5,6 +5,7 @@ import com.mehdi.project_school.dto.response.UserResponseDTO;
 import com.mehdi.project_school.entity.user.UserRoleName;
 import com.mehdi.project_school.service.auth.impl.AuthorityServiceImpl;
 import com.mehdi.project_school.service.auth.impl.UserServiceImpl;
+import com.mehdi.project_school.service.impl.CourseServiceImpl;
 import lombok.AllArgsConstructor;
 import org.pmw.tinylog.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +19,12 @@ public class InitData {
     private UserServiceImpl userService;
     @Autowired
     private AuthorityServiceImpl authorityService;
-
+    @Autowired
+    private CourseServiceImpl courseService;
+    @Autowired
     private final JwtService jwtService;
+
+
 
     public void Init() {
         String username = "mehdi";
@@ -39,5 +44,7 @@ public class InitData {
         }
         //testData();
     }
+
+
 
 }

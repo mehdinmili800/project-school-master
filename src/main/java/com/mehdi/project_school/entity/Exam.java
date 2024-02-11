@@ -1,5 +1,6 @@
 package com.mehdi.project_school.entity;
 
+
 import com.mehdi.project_school.entity.group.Student;
 import jakarta.persistence.*;
 
