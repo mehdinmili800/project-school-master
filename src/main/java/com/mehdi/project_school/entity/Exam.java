@@ -32,12 +32,6 @@ public class Exam {
     @Column(name = "written_at", nullable = false)
     private LocalDate writtenAt;
 
-    /**
-     * Role name.
-     */
-    @Enumerated(EnumType.STRING)
-    @Column(name="exam_type")
-    private ExamType examType;
 
     /**
      * Empty constructor.
@@ -49,14 +43,12 @@ public class Exam {
      *
      * @param mark Exam result.
      * @param writtenAt Time when exam written.
-     * @param examType Type of the exam.
      * @param course Course where student wrote the exam.
      * @param student Student who wrote the exam.
      */
-    public Exam(int mark, LocalDate writtenAt, ExamType examType, Course course, Student student) {
+    public Exam(int mark, LocalDate writtenAt, Course course, Student student) {
         this.mark = mark;
         this.writtenAt = writtenAt;
-        this.examType = examType;
         this.course = course;
         this.student = student;
     }
@@ -99,13 +91,7 @@ public class Exam {
         this.writtenAt = writtenAt;
     }
 
-    public ExamType getExamType() {
-        return examType;
-    }
 
-    public void setExamType(ExamType examType) {
-        this.examType = examType;
-    }
 
     public Course getCourse() {
         return course;
